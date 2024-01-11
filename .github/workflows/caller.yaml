@@ -1,4 +1,4 @@
-name: Deploy Enviromental Data
+name: Deploy Infra Manually
 
 on:
   workflow_dispatch:
@@ -10,10 +10,6 @@ jobs:
     uses: evacalvogomez/cicd-tests/.github/workflows/main.yaml@main
     with:
       environment: Development
-
-    runs-on: ubuntu-latest
-
-    env:
       STAGE: dev
       S3_BUCKET_NAME: dev-mercury-enviromental-data
 
@@ -23,10 +19,6 @@ jobs:
     uses: evacalvogomez/cicd-tests/.github/workflows/main.yaml@main
     with:
       environment: Staging
-
-    runs-on: ubuntu-latest
-
-    env:
       STAGE: staging
       S3_BUCKET_NAME: staging-mercury-enviromental-data
 
@@ -36,9 +28,5 @@ jobs:
     uses: evacalvogomez/cicd-tests/.github/workflows/main.yaml@main
     with:
       environment: Production
-
-    runs-on: ubuntu-latest]
-
-    env:
       STAGE: prod
       S3_BUCKET_NAME: prod-mercury-enviromental-data

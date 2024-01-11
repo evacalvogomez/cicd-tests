@@ -1,4 +1,4 @@
-name: Deploy Enviromental Data
+name: Deploy Infra to Development
 
 on:
   push:
