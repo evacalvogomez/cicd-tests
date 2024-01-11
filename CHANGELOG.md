@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.9](https://github.com/evacalvogomez/cicd-tests/compare/v1.0.8...v1.0.9) (2024-01-11)
+
+
+### Continuous Integration
+
+* cosas ([f2d2b3b](https://github.com/evacalvogomez/cicd-tests/commit/f2d2b3b9c373ce861c7ac40a135c4cdafeafbcab))
+* environment ([35e7afc](https://github.com/evacalvogomez/cicd-tests/commit/35e7afc231e49254fd5ff455c98bc2de76bacfff))
+
 ## [1.0.8](https://github.com/evacalvogomez/cicd-tests/compare/v1.0.7...v1.0.8) (2024-01-11)
 
 
