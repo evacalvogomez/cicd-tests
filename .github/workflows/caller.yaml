@@ -16,6 +16,7 @@ jobs:
     with:
       STAGE: dev
       S3_BUCKET_NAME: dev-mercury-enviromental-data
+      environment: 'Development'
 
   deploy_staging:
     name: 'Deployment to Staging'
@@ -24,6 +25,7 @@ jobs:
     with:
       STAGE: staging
       S3_BUCKET_NAME: staging-mercury-enviromental-data
+      environment: 'Staging'
 
   deploy_production:
     name: 'Deployment to Production'
@@ -32,3 +34,4 @@ jobs:
     with:
       STAGE: prod
       S3_BUCKET_NAME: prod-mercury-enviromental-data
+      environment: 'Production'
