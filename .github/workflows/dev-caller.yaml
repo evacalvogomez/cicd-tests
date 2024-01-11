@@ -9,7 +9,7 @@ jobs:
   deploy_dev:
     name: 'Deployment to Development'
 
-    uses: dehn/environmental-data/.github/workflows/reusable-workflow.yaml@main
+    uses: dehn/environmental-data/.github/workflows/main.yaml@main
     with:
       environment: Development
 
