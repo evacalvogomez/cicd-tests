@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.10](https://github.com/evacalvogomez/cicd-tests/compare/v1.0.9...v1.0.10) (2024-01-11)
+
+
+### Continuous Integration
+
+* environments per job ([5ea3f73](https://github.com/evacalvogomez/cicd-tests/commit/5ea3f73573a64f893b100c1ca22eec2b2b422656))
+
 ## [1.0.9](https://github.com/evacalvogomez/cicd-tests/compare/v1.0.8...v1.0.9) (2024-01-11)
 
 
