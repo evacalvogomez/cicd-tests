@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.8](https://github.com/evacalvogomez/cicd-tests/compare/v1.0.7...v1.0.8) (2024-01-11)
+
+
+### Continuous Integration
+
+* pru Eva ([9361ed5](https://github.com/evacalvogomez/cicd-tests/commit/9361ed5fd56efb4da045239644c434873bb8484f))
+
 ## [1.0.7](https://github.com/evacalvogomez/cicd-tests/compare/v1.0.6...v1.0.7) (2024-01-11)
 
 
