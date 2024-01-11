@@ -30,4 +30,4 @@ jobs:
 
       - name: Variables
         run: |
-          echo "STAGE: ${{ inputs.STAGE }}, S3_BUCKET_NAME: ${{ inputs.S3_BUCKET_NAME }}, Environment: ${{ env.GITHUB_ENV }}"
+          echo "STAGE: ${{ inputs.STAGE }}, S3_BUCKET_NAME: ${{ inputs.S3_BUCKET_NAME }}"
