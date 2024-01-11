@@ -1,0 +1,23 @@
+name: Dehn Environmental Data PR
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  infra_test:
+    name: '[PR] Build & Test Infra'
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js 18.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+
+      - name: '[PR] Build & Test Infra'
+        run: |
+          echo "Build & Test Infra"

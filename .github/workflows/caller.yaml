@@ -1,0 +1,44 @@
+name: Deploy Enviromental Data
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy_dev:
+    name: 'Deployment to Development'
+
+    uses: evacalvogomez/cicd-tests/.github/workflows/main.yaml@main
+    with:
+      environment: Development
+
+    runs-on: ubuntu-latest
+
+    env:
+      STAGE: dev
+      S3_BUCKET_NAME: dev-mercury-enviromental-data
+
+  deploy_staging:
+    name: 'Deployment to Staging'
+
+    uses: evacalvogomez/cicd-tests/.github/workflows/main.yaml@main
+    with:
+      environment: Staging
+
+    runs-on: ubuntu-latest
+
+    env:
+      STAGE: staging
+      S3_BUCKET_NAME: staging-mercury-enviromental-data
+
+  deploy_production:
+    name: 'Deployment to Production'
+
+    uses: evacalvogomez/cicd-tests/.github/workflows/main.yaml@main
+    with:
+      environment: Production
+
+    runs-on: ubuntu-latest]
+
+    env:
+      STAGE: prod
+      S3_BUCKET_NAME: prod-mercury-enviromental-data

@@ -1,0 +1,37 @@
+name: Reusable Workflow
+
+on:
+  workflow_call:
+    inputs:
+      environment:
+        type: string
+        description: 'Environment to deploy to'
+        required: true
+        default: 'Development'
+      STAGE:
+        type: string
+        description: 'Stage to deploy to'
+        required: true
+        default: 'dev'
+      S3_BUCKET_NAME:
+        type: string
+        description: 'S3 Bucket Name'
+        required: true
+
+jobs:
+  deploy:
+    name: 'AWS Infrastructure Deployment'
+
+    runs-on: ubuntu-latest
+
+    environment: ${{ inputs.environment }}
+    env:
+      STAGE: ${{ inputs.STAGE }}
+      S3_BUCKET_NAME: ${{ inputs.S3_BUCKET_NAME }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Variables
+        run: |
+          echo "STAGE: ${{ inputs.STAGE }}, S3_BUCKET_NAME: ${{ inputs.S3_BUCKET_NAME }}"
