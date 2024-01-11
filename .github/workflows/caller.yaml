@@ -9,7 +9,6 @@ jobs:
 
     uses: evacalvogomez/cicd-tests/.github/workflows/main.yaml@main
     with:
-      environment: Development
       STAGE: dev
       S3_BUCKET_NAME: dev-mercury-enviromental-data
 
