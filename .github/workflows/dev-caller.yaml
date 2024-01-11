@@ -13,8 +13,6 @@ jobs:
     with:
       environment: Development
 
-    runs-on: ubuntu-latest
-
     env:
       STAGE: dev
       S3_BUCKET_NAME: dev-mercury-enviromental-data
