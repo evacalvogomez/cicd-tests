@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/evacalvogomez/cicd-tests/compare/v1.0.1...v1.0.2) (2024-01-11)
+
+
+### Bug Fixes
+
+* cacotas ([5af4cf9](https://github.com/evacalvogomez/cicd-tests/commit/5af4cf9594c156370425d403a8dcab0bd248e193))
+
 ## [1.0.1](https://github.com/evacalvogomez/cicd-tests/compare/v1.0.0...v1.0.1) (2024-01-11)
 
 
