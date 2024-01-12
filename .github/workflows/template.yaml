@@ -1,0 +1,64 @@
+name: Deployment Reusable Workflow
+
+on:
+  workflow_call:
+    inputs:
+      environment:
+        type: string
+        description: 'Environment to deploy to'
+        required: false
+        default: 'Development'
+
+jobs:
+  deploy:
+    name: 'AWS Infrastructure Deployment'
+
+    runs-on: ubuntu-latest
+
+    environment: ${{ inputs.environment }}
+
+    steps:
+      - name: Set Environment Variables
+        run: |
+          case ${{ inputs.environment }} in
+            Development)
+              echo "ENV_ALIAS=dev" >> $GITHUB_ENV
+              ;;
+            Staging)
+              echo "ENV_ALIAS=staging" >> $GITHUB_ENV
+              ;;
+            Production)
+              echo "ENV_ALIAS=prod" >> $GITHUB_ENV
+              ;;
+          esac
+
+      - uses: actions/checkout@v4
+
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v3
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: eu-central-1
+
+      - name: Use Node.js 18.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+
+      - name: Deploy to AWS
+        env:
+          STAGE: '$ENV_ALIAS'
+          S3_BUCKET_NAME: '$ENV_ALIAS-mercury-enviromental-data'
+        run: |
+          npm install -g aws-cdk
+          cd infra
+          npm ci
+          cd ..
+          npm run deploy:ci
+          aws s3 cp ./src/index.html s3://${S3_BUCKET_NAME}/index.html --metadata-directive REPLACE --cache-control no-store

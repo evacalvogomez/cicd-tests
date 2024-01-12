@@ -9,8 +9,7 @@ jobs:
   deploy_dev:
     name: 'Deployment to Development'
 
-    uses: evacalvogomez/cicd-tests/.github/workflows/main.yaml@main
+    uses: evacalvogomez/cicd-tests//.github/workflows/template.yaml@main
 
     with:
-      STAGE: dev
-      S3_BUCKET_NAME: dev-mercury-enviromental-data
+      environment: Development

@@ -8,30 +8,12 @@ on:
         description: 'Environment to deploy to'
         required: true
         default: 'Development'
+
 jobs:
-  deploy_dev:
-    name: 'Deployment to Development'
+  deploy:
+    name: 'Deploy to every environment'
 
-    uses: evacalvogomez/cicd-tests/.github/workflows/main.yaml@main
+    uses: evacalvogomez/cicd-tests//.github/workflows/template.yaml@main
+
     with:
-      STAGE: dev
-      S3_BUCKET_NAME: dev-mercury-enviromental-data
-      environment: 'Development'
-
-  deploy_staging:
-    name: 'Deployment to Staging'
-
-    uses: evacalvogomez/cicd-tests/.github/workflows/main.yaml@main
-    with:
-      STAGE: staging
-      S3_BUCKET_NAME: staging-mercury-enviromental-data
-      environment: 'Staging'
-
-  deploy_production:
-    name: 'Deployment to Production'
-
-    uses: evacalvogomez/cicd-tests/.github/workflows/main.yaml@main
-    with:
-      STAGE: prod
-      S3_BUCKET_NAME: prod-mercury-enviromental-data
-      environment: 'Production'
+      environment: ${{ github.event.inputs.environment }}
