@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.12](https://github.com/evacalvogomez/cicd-tests/compare/v1.0.11...v1.0.12) (2024-01-12)
+
+
+### Continuous Integration
+
+* fixed url template workflow ([8c5fc61](https://github.com/evacalvogomez/cicd-tests/commit/8c5fc61e61f04d733b1a53d6ee79d7a8f8bb2e87))
+
 ## [1.0.11](https://github.com/evacalvogomez/cicd-tests/compare/v1.0.10...v1.0.11) (2024-01-12)
 
 
