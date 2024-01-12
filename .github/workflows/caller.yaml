@@ -16,4 +16,4 @@ jobs:
     uses: evacalvogomez/cicd-tests/.github/workflows/template.yaml@main
 
     with:
-      environment: ${{ github.event.inputs.environment }}
+      environment: ${{ inputs.environment }}
