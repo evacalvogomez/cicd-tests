@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.13](https://github.com/evacalvogomez/cicd-tests/compare/v1.0.12...v1.0.13) (2024-01-12)
+
+
+### Continuous Integration
+
+* testing vars ([871febc](https://github.com/evacalvogomez/cicd-tests/commit/871febc1855a67e6240b16a1d729c93b9007a57e))
+
 ## [1.0.12](https://github.com/evacalvogomez/cicd-tests/compare/v1.0.11...v1.0.12) (2024-01-12)
 
 
