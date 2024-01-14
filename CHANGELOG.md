@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.14](https://github.com/evacalvogomez/cicd-tests/compare/v1.0.13...v1.0.14) (2024-01-14)
+
+
+### Continuous Integration
+
+* culete secret ([4dfdc48](https://github.com/evacalvogomez/cicd-tests/commit/4dfdc48c11b5b297aceb309f9923e587cd9bf45b))
+
 ## [1.0.13](https://github.com/evacalvogomez/cicd-tests/compare/v1.0.12...v1.0.13) (2024-01-12)
 
 
