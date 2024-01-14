@@ -37,5 +37,6 @@ jobs:
       - name: Set variables
         env:
           ENV_TEST: ${{ vars.TEST }}
+          ENV_SECRET_TEST: ${{ secrets.SECRET_TEST }}
         run: |
           echo "$ENV_TEST"
