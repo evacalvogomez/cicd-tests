@@ -17,3 +17,5 @@ jobs:
 
     with:
       environment: ${{ inputs.environment }}
+
+    secrets: inherit
