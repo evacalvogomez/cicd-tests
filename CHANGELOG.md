@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.18](https://github.com/evacalvogomez/cicd-tests/compare/v1.0.17...v1.0.18) (2024-01-15)
+
+
+### Continuous Integration
+
+* testt tag removed from inputs ([40d6409](https://github.com/evacalvogomez/cicd-tests/commit/40d64099f83487de53af0daa651d01bd34ae5ec5))
+
 ## [1.0.17](https://github.com/evacalvogomez/cicd-tests/compare/v1.0.16...v1.0.17) (2024-01-15)
 
 
