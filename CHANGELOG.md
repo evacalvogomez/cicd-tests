@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.16](https://github.com/evacalvogomez/cicd-tests/compare/v1.0.15...v1.0.16) (2024-01-15)
+
+
+### Continuous Integration
+
+* refactor and test tags ([0d0748d](https://github.com/evacalvogomez/cicd-tests/commit/0d0748d189bed3192c36851ca6237685a8de8f2f))
+
 ## [1.0.15](https://github.com/evacalvogomez/cicd-tests/compare/v1.0.14...v1.0.15) (2024-01-14)
 
 
