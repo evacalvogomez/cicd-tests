@@ -8,6 +8,10 @@ on:
         description: 'Environment to deploy to'
         required: false
         default: 'Development'
+      bucket_prefix:
+        type: string
+        description: 'Prefix for the bucket name'
+        required: false
 
 jobs:
   deploy:
@@ -18,25 +22,43 @@ jobs:
     environment: ${{ inputs.environment }}
 
     steps:
+      - uses: actions/checkout@v4
+
       - name: Set Environment Variables
         run: |
           case ${{ inputs.environment }} in
             Development)
-              echo "ENV_ALIAS=dev" >> $GITHUB_ENV
+              export ENV_ALIAS=dev
               ;;
             Staging)
-              echo "ENV_ALIAS=staging" >> $GITHUB_ENV
+              export ENV_ALIAS=staging
               ;;
             Production)
-              echo "ENV_ALIAS=prod" >> $GITHUB_ENV
+              export ENV_ALIAS=prod
               ;;
           esac
 
-      - uses: actions/checkout@v4
+          echo "STAGE=${ENV_ALIAS}" >> $GITHUB_ENV
+          echo "S3_BUCKET_NAME=${ENV_ALIAS}-${{ inputs.bucket_prefix }}" >> $GITHUB_ENV
 
-      - name: Set variables
-        env:
-          ENV_TEST: ${{ vars.TEST }}
-          ENV_SECRET_TEST: ${{ secrets.SECRET_TEST }}
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v3
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: eu-central-1
+
+      - name: Use Node.js 18.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+
+      - name: Deploy to AWS
         run: |
-          echo "$ENV_TEST"
+          echo "Deploying to ${S3_BUCKET_NAME} in ${STAGE}"
+          npm install -g aws-cdk
+          cd infra
+          npm ci
+          cd ..
+          npm run deploy:ci
+          aws s3 cp ./src/index.html s3://${S3_BUCKET_NAME}/index.html --metadata-directive REPLACE --cache-control no-store

@@ -8,14 +8,21 @@ on:
         description: 'Environment to deploy to'
         required: true
         default: 'Development'
+      tag:
+        description: 'Tag to deploy to'
+        required: true
+  push:
+    tags:
+      - 'v[0-9]+.[0-9]+.[0-9]+' # Push events to tags like v1.0.0, v2.3.4, etc.
 
 jobs:
   deploy:
     name: 'Deploy to every environment'
 
-    uses: evacalvogomez/cicd-tests/.github/workflows/template.yaml@main
+    uses: dehn/environmental-data/.github/workflows/template.yaml@main
 
     with:
       environment: ${{ inputs.environment }}
+      bucket_prefix: 'mercury-enviromental-data'
 
     secrets: inherit

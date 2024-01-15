@@ -1,0 +1,29 @@
+name: Deploy Infra to Development and Staging
+
+on:
+  push:
+    tags:
+      - 'v[0-9]+.[0-9]+.[0-9]+' # Push events to tags like v1.0.0, v2.3.4, etc.
+
+jobs:
+  deploy_dev:
+    name: 'Deployment to Development'
+
+    uses: dehn/environmental-data/.github/workflows/template.yaml@main
+
+    with:
+      environment: Development
+      bucket_prefix: 'mercury-enviromental-data'
+
+    secrets: inherit
+
+  deploy_staging:
+    name: 'Deployment to Staging'
+
+    uses: dehn/environmental-data/.github/workflows/template.yaml@main
+
+    with:
+      environment: Staging
+      bucket_prefix: 'mercury-enviromental-data'
+
+    secrets: inherit
