@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.17](https://github.com/evacalvogomez/cicd-tests/compare/v1.0.16...v1.0.17) (2024-01-15)
+
+
+### Continuous Integration
+
+* fixing name errors ([bc3a265](https://github.com/evacalvogomez/cicd-tests/commit/bc3a265de5a08bbbaac4b78c682af11932d2872f))
+
 ## [1.0.16](https://github.com/evacalvogomez/cicd-tests/compare/v1.0.15...v1.0.16) (2024-01-15)
 
 
