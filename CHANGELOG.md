@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.15](https://github.com/evacalvogomez/cicd-tests/compare/v1.0.14...v1.0.15) (2024-01-14)
+
+
+### Continuous Integration
+
+* testing inherit secrets ([05273cc](https://github.com/evacalvogomez/cicd-tests/commit/05273ccc129bedb216443dcac0b6d922e9d9100a))
+
 ## [1.0.14](https://github.com/evacalvogomez/cicd-tests/compare/v1.0.13...v1.0.14) (2024-01-14)
 
 
