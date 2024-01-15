@@ -9,7 +9,7 @@ jobs:
   deploy_dev:
     name: 'Deployment to Development'
 
-    uses: dehn/environmental-data/.github/workflows/template.yaml@main
+    uses: evacalvogomez/cicd-tests/.github/workflows/template.yaml@main
 
     with:
       environment: Development
@@ -20,7 +20,7 @@ jobs:
   deploy_staging:
     name: 'Deployment to Staging'
 
-    uses: dehn/environmental-data/.github/workflows/template.yaml@main
+    uses: evacalvogomez/cicd-tests/.github/workflows/template.yaml@main
 
     with:
       environment: Staging

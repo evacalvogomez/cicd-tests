@@ -19,7 +19,7 @@ jobs:
   deploy:
     name: 'Deploy to every environment'
 
-    uses: dehn/environmental-data/.github/workflows/template.yaml@main
+    uses: evacalvogomez/cicd-tests/.github/workflows/template.yaml@main
 
     with:
       environment: ${{ inputs.environment }}

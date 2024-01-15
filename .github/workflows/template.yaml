@@ -15,7 +15,7 @@ on:
 
 jobs:
   deploy:
-    name: 'AWS Infrastructure Deployment'
+    name: 'Testico'
 
     runs-on: ubuntu-latest
 
@@ -38,27 +38,4 @@ jobs:
               ;;
           esac
 
-          echo "STAGE=${ENV_ALIAS}" >> $GITHUB_ENV
-          echo "S3_BUCKET_NAME=${ENV_ALIAS}-${{ inputs.bucket_prefix }}" >> $GITHUB_ENV
-
-      - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v3
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: eu-central-1
-
-      - name: Use Node.js 18.x
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18.x
-
-      - name: Deploy to AWS
-        run: |
-          echo "Deploying to ${S3_BUCKET_NAME} in ${STAGE}"
-          npm install -g aws-cdk
-          cd infra
-          npm ci
-          cd ..
-          npm run deploy:ci
-          aws s3 cp ./src/index.html s3://${S3_BUCKET_NAME}/index.html --metadata-directive REPLACE --cache-control no-store
+          echo "guapa"
