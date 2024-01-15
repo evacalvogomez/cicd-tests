@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.19](https://github.com/evacalvogomez/cicd-tests/compare/v1.0.18...v1.0.19) (2024-01-15)
+
+
+### Continuous Integration
+
+* tag check for manual deployments ([8ba8db9](https://github.com/evacalvogomez/cicd-tests/commit/8ba8db9bd56be923f417c265ac2273e32ed3514c))
+
 ## [1.0.18](https://github.com/evacalvogomez/cicd-tests/compare/v1.0.17...v1.0.18) (2024-01-15)
 
 
